@@ -9,5 +9,8 @@ mother(X):-parent(Y,X),woman(Y),write(Y).
 daughter(X,Y):-woman(X),parent(Y,X).
 daughter(X):-parent(X,Y),woman(Y),write(Y),write(" "),fail.
 
+brother(X,Y):-man(X),parent(Z,X),parent(Z,Y).
+brothers(X):-parent(Z,X),parent(Z,Y),man(Z),man(Y),not(Y=X),write(Y),write(" "),fail.
+
 
 
