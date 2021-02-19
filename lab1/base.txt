@@ -9,6 +9,9 @@ man(danil).
 man(dima).
 man(kolya).
 man(egor).
+man(artyom).
+man(andrey).
+man(svyat).
 
 woman(liza).
 woman(katya).
@@ -19,6 +22,9 @@ woman(olya).
 woman(sveta).
 woman(alyona).
 woman(sofa).
+woman(lusya).
+woman(dasha).
+woman(masha).
 
 parent(liza,nikita).
 parent(liza,lena).
@@ -51,5 +57,14 @@ parent(sofa,egor).
 parent(danil,dima).
 parent(danil,kolya).
 parent(danil,egor).
+
+parent(lusya,ksenia).
+parent(artyom,ksenia).
+
+parent(dasha,alyona).
+parent(andrey,alyona).
+
+parent(masha,danil).
+parent(svyat,danil).
 
 
