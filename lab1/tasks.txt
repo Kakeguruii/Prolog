@@ -1,0 +1,3 @@
+mans:-man(X),write(X),write(" "),fail.
+womans:-woman(X),write(X),write(" "),fail.
+
