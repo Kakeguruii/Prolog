@@ -15,5 +15,8 @@ brothers(X):-parent(Z,X),parent(Z,Y),man(Z),man(Y),not(Y=X),write(Y),write(" "),
 husband(X,Y):-man(X),woman(Y),parent(X,Z),parent(Y,Z).
 husband(X):-woman(X),man(Y),parent(X,Z),parent(Y,Z),write(Y).
 
+b_s(X,Y):-parent(Z,Y),parent(Z,X).
+b_s(X):-parent(Z,X),parent(Z,Y),man(Z),not(Y=X),write(Y),write(" "),fail.
+
 
 
