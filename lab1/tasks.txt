@@ -6,5 +6,8 @@ children(X):-parent(X,Y),write(Y),write(" "),fail.
 mother(X,Y):-woman(X),parent(X,Y).
 mother(X):-parent(Y,X),woman(Y),write(Y).
 
+daughter(X,Y):-woman(X),parent(Y,X).
+daughter(X):-parent(X,Y),woman(Y),write(Y),write(" "),fail.
+
 
 
