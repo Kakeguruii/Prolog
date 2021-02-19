@@ -21,5 +21,8 @@ b_s(X):-parent(Z,X),parent(Z,Y),man(Z),not(Y=X),write(Y),write(" "),fail.
 grand_pa(X,Y):-man(X),parent(X,Z),parent(Z,Y).
 grand_pas(X):-parent(Y,X),parent(Z,Y),man(Z),write(Z),write(" "),fail.
 
+grand_so(X,Y):-man(X),parent(Z,X),parent(Y,Z).
+grand_sons(X):-parent(X,Y),parent(Y,Z),man(Z),write(Z),write(" "),fail.
+
 
 
