@@ -29,3 +29,6 @@ grand_pa_and_son(X,Y):-(parent(X,Z),parent(Z,Y),man(X),man(Y))|(parent(Z,X),pare
 grand_ma_and_da(X,Y):-(parent(X,Z),parent(Z,Y),woman(X),woman(Y))|(parent(Z,X),parent(Y,Z),woman(X),woman(Y)).
 
 
+uncle(X,Y):-parent(Z,X),parent(Z,N),parent(N,Y),man(X).
+uncle(X):-parent(Z,X),parent(N,Z),parent(N,Y),man(N),man(Y),not(Y=Z),write(Y),write(" "),fail.
+
