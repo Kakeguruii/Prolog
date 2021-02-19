@@ -20,4 +20,36 @@ woman(sveta).
 woman(alyona).
 woman(sofa).
 
+parent(liza,nikita).
+parent(liza,lena).
+parent(liza,anya).
+parent(liza,kirill).
+parent(lesha,nikita).
+parent(lesha,lena).
+parent(lesha,anya).
+parent(lesha,kirill).
+
+parent(katya,olya).
+parent(katya,sveta).
+parent(maxim,olya).
+parent(maxim,sveta).
+
+parent(ksenia,petya).
+parent(nikita,petya).
+
+parent(olya,misha).
+parent(olya,pasha).
+parent(kirill,misha).
+parent(kirill,pasha).
+
+parent(alyona,sofa).
+parent(misha,sofa).
+
+parent(sofa,dima).
+parent(sofa,kolya).
+parent(sofa,egor).
+parent(danil,dima).
+parent(danil,kolya).
+parent(danil,egor).
+
 

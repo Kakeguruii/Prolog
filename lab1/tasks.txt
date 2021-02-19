@@ -1,3 +1,4 @@
 mans:-man(X),write(X),write(" "),fail.
 womans:-woman(X),write(X),write(" "),fail.
 
+children(X):-parent(X,Y),write(Y),write(" "),fail.
