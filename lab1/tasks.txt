@@ -32,3 +32,6 @@ grand_ma_and_da(X,Y):-(parent(X,Z),parent(Z,Y),woman(X),woman(Y))|(parent(Z,X),p
 uncle(X,Y):-parent(Z,X),parent(Z,N),parent(N,Y),man(X).
 uncle(X):-parent(Z,X),parent(N,Z),parent(N,Y),man(N),man(Y),not(Y=Z),write(Y),write(" "),fail.
 
+niece(X,Y):- parent(Z,Y),man(Z), parent(Z,M),parent(M,X),man(M),woman(X).
+niece(X):- parent(Z,X),man(Z),parent(Z,M),parent(M,Y),man(M),woman(Y),not(X=M), write(Y), write(" "), fail.
+

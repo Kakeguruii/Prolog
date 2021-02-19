@@ -25,6 +25,8 @@ woman(sofa).
 woman(lusya).
 woman(dasha).
 woman(masha).
+woman(toma).
+woman(ira).
 
 parent(liza,nikita).
 parent(liza,lena).
@@ -42,6 +44,10 @@ parent(maxim,sveta).
 
 parent(ksenia,petya).
 parent(nikita,petya).
+parent(ksenia,toma).
+parent(ksinia,ira).
+parent(nikita,toma).
+parent(nikita,ira).
 
 parent(olya,misha).
 parent(olya,pasha).
