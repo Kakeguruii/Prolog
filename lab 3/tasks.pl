@@ -83,6 +83,33 @@ sumnotsimpledel2(_, Del, CurSum, CurSum) :- Del < 4, !.
 sumnotsimpledel2(N, Del, CurSum, Sum) :- Del1 is Del - 1, M is N mod Del,((M is 0, not(simple(Del))) -> CurSum1 is CurSum + Del; CurSum1 is CurSum), sumnotsimpledel2(N, Del1, CurSum1, Sum).
 sumnotsimpledel2(N, Sum) :- sumnotsimpledel2(N, N, 0, Sum).
 
+%15 номер
+kol_del15(0,_,0):-!.
+kol_del15(1,_,1):-!.
+kol_del15(I,N,Count):-I1 is I-1, kol_del15(I1,N,C), (0 is N mod I -> Count is C+1; Count is C).    
+kol_del15(N,Count):-kol_del15(N,N,Count).  
+simple15(1).
+simple15(X):- kol_del15(X,C), C is 2.
+
+sumsimple(0,0):-!.
+sumsimple(N,X):- D is N div 10, M is N mod 10, sumsimple(D,X1), simple15(M),!, X is M+X1.
+sumsimple(N,X):- D is N div 10, sumsimple(D,X1), X is X1.   
+
+nod(A,A,A):-!.
+nod(0,B,B):-!.
+nod(A,0,A):-!.
+nod(A,B,X):-A>B, C is A mod B, nod(C,B,X).           
+nod(A,B,X):-A<B, C is B mod A, nod(A,C,X).
+
+mutsimple(N1,N2):- nod(N1,N2,Nod), Nod is 1.
+
+nedel(N,C):-  M is N mod C, not(M is 0).
+
+task15(_, 0, C, C) :- !.
+task15(N, CurN, C, Count) :- ((nedel(N,CurN), not(mutsimple(N,CurN)), sumsimple(N,SSum), mutsimple(SSum, CurN))-> C1 is C + 1; C1 is C), CurN1 is CurN - 1, task15(N, CurN1, C1, Count).
+task15(N, Count) :- task15(N, N, 0, Count).
+
+
 
 
 
