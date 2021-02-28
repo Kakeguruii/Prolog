@@ -46,5 +46,12 @@ min(N,B,X):- D is N mod 10, D<B, !, E is N div 10, min(E,D,X).
 min(N,B,X):- D is N div 10, min(D,B,X).
 minimal(N,X):-min(N,10,X).
 
+%11 вверх номер
+min3(N,1):-N<3,!.
+min3(N,0):-N<10,N>=0,!.
+min3(N,X):-N1 is N div 10, N2 is N mod 10, min3(N1,X1), N2<3,!, X is X1+1.  
+min3(N,X):- N1 is N div 10, min3(N1,X1), X is X1.
+
+
 
 
