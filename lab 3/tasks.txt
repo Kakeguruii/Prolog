@@ -26,4 +26,8 @@ fib(0,A,_,A):-!.
 fib(N,A,B,X):- AB is A+B, N1 is N-1, fib(N1,B,AB,X).             
 fibonachi(N,X):-fib(N,0,1,X). 
 
+%7 номер
+sum(0,0):-!.
+sum(N,X):- D is N div 10, M is N mod 10, sum(D,X1), X is M+X1. 
+
 
