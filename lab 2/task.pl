@@ -197,3 +197,48 @@ role(signora, 1).
 role(baizhu, 2).
 
 
+question1(X1):-		write("Choose age: "),nl,
+					write("1. Child "),nl,
+					write("2. Teenager "),nl,
+    				write("3. Adult "),nl,
+					read(X1).
+
+question2(X2):-		write("Choose gender: "),nl,
+					write("1. Male "),nl,
+					write("2. Female "),nl,
+					read(X2).
+
+question3(X3):-		write("Choose element: "),nl,
+					write("1. Pyro "),nl,
+					write("2. Hydro "),nl,
+    				write("3. Anemo "),nl,
+					write("4. Geo "),nl,
+					write("5. Electro "),nl,
+					write("6. Cryo "),nl,
+					write("7. Dendro "),nl,
+					read(X3).
+
+question4(X4):-		write("Choose nation: "),nl,
+					write("1. Mondstadt "),nl,
+					write("2. Liyue "),nl,
+					write("3. Inazuma "),nl,
+					read(X4).
+
+question5(X5):-		write("Choose weapon: "),nl,
+					write("1. Catalyst "),nl,
+					write("2. Bow "),nl,
+					write("3. One-handed sword "),nl,
+					write("4. Two-handed sword  "),nl,
+					write("5. Spear "),nl,
+					read(X5).
+
+question6(X6):-		write("Choose role: "),nl,
+					write("1. Damager "),nl,
+					write("2. Healer "),nl,
+					write("3. Support "),nl,
+					read(X6).
+
+pr:-	question1(X1),question2(X2),question3(X3),question4(X4),question5(X5),question6(X6),
+		age(X,X1), gender(X,X2),element(X,X3),nation(X,X4),weapon(X,X5),role(X,X6),
+		write("It's "),write(X).
+
