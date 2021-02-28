@@ -97,6 +97,25 @@ pr_ein3:- Outfit=[_,_,_],
 			write(Outfit).
 
 
+pr_ein4:- Friends=[_,_,_],
+
+				
+				in_list(Friends,[ivanov,_,_]),
+				in_list(Friends,[borisov,_,_]),
+				in_list(Friends,[semenov,_,3]),
+				
+    			in_list(Friends,[_,slesar,1]),
+				in_list(Friends,[_,tokar,_]),
+				in_list(Friends,[_,svarka,_]),
+    			
+    			in_list(Friends,[_,_,2]),
+    			
+    			
+    			not(in_list(Friends,[borisov,slesar,_])),
+    			not(in_list(Friends,[semenov,tokar,_])),
+    			
+         write(Friends).
+
 
 
 
