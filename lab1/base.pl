@@ -74,3 +74,5 @@ parent(masha,danil).
 parent(svyat,danil).
 
 
+
+
