@@ -168,6 +168,29 @@ pr_ein6:- Talents = [_,_,_,_],
 				write(Talents).
 
 
+pr_ein7:- Competitions = [_,_,_],
+
+				in_list(Competitions,[saimon,israel,_]),
+				in_list(Competitions,[michael,_,basketball]),
+				in_list(Competitions,[richard,_,_]),
+
+				in_list(Competitions,[_,america,_]),
+				in_list(Competitions,[_,australia,_]),
+
+				in_list(Competitions,[_,_,tennis]),
+				in_list(Competitions,[_,_,cricket]),
+
+
+				not(in_list(Competitions,[michael,america,_])),
+				not(in_list(Competitions,[saimon,_,tennis])),
+
+				in_list(Competitions,[WHO1,australia,_]),
+				in_list(Competitions,[richard,_,WHO2]),
+				write(Competitions), nl,
+				write(WHO1), write(" is from Australia"), nl,
+				write(WHO2), write(" is Richard's sport"), nl.
+
+
 
 
 
