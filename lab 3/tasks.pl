@@ -52,6 +52,11 @@ min3(N,0):-N<10,N>=0,!.
 min3(N,X):-N1 is N div 10, N2 is N mod 10, min3(N1,X1), N2<3,!, X is X1+1.  
 min3(N,X):- N1 is N div 10, min3(N1,X1), X is X1.
 
+%11 вниз номер
+min3(0,K,K):-!.
+min3(N,K,X):-D is N mod 10, D<3, !, K1 is K+1 ,E is N div 10, min3(E,K1,X).  
+min3(N,K,X):-D is N div 10, min3(D,K,X).
+min3down(N,X):- min3(N,0,X).
 
 
 
