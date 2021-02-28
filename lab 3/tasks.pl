@@ -109,7 +109,20 @@ task15(_, 0, C, C) :- !.
 task15(N, CurN, C, Count) :- ((nedel(N,CurN), not(mutsimple(N,CurN)), sumsimple(N,SSum), mutsimple(SSum, CurN))-> C1 is C + 1; C1 is C), CurN1 is CurN - 1, task15(N, CurN1, C1, Count).
 task15(N, Count) :- task15(N, N, 0, Count).
 
+%16 номер
+fact16(1,CurX,CurX):-!.
+fact16(N,CurX,X):-CurX1 is CurX*N, N1 is N-1, fact16(N1,CurX1,X). 
+factorial16(N,X):-fact16(N,1,X).
 
+sumfact16(0,0):-!.
+sumfact16(N,X):- D is N div 10, M is N mod 10, sumfact16(D,X1), factorial16(M,Mfact), X is Mfact+X1.
+sumfact16(N,X):- D is N div 10, sumfact16(D,X1), X is X1. 
+
+truesumfact16(N,SumfactN):- N =:= SumfactN.
+
+factorion(2540160,Sum, Sum):-!.
+factorion(N, Sum, X):- ((sumfact16(N, SumfactN), truesumfact16(SumfactN,N))-> Sum1 is Sum+N; Sum1 is Sum), N1 is N+1, factorion(N1,Sum1,X).
+sumfactorion(N,X):-factorion(N,0,X).
 
 
 
