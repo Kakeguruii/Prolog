@@ -65,6 +65,38 @@ pr_ein2:-Hair=[_,_,_],
 		write(Hair).
 
 
+pr_ein3:- Outfit=[_,_,_],
+
+    			in_list(Outfit,[natasha,_,green]),
+    			in_list(Outfit,[anya,_,_]),
+			in_list(Outfit,[valya,_,_]),
+				
+    			in_list(Outfit,[_,white,_]),
+			in_list(Outfit,[_,green,_]),
+    			in_list(Outfit,[_,blue,_]),
+    		
+    			in_list(Outfit,[_,_,white]),
+    			in_list(Outfit,[_,_,blue]),
+
+			(in_list(Outfit,[anya,green,green]);
+			in_list(Outfit,[anya,white,white]);
+			in_list(Outfit,[anya,blue,blue])),
+
+			not(in_list(Outfit,[valya,white,_])),
+			not(in_list(Outfit,[valya,_,white])),
+			not(in_list(Outfit,[valya,white,white])),
+
+			not(in_list(Outfit,[valya,green,green])),
+			not(in_list(Outfit,[valya,white,white])),
+			not(in_list(Outfit,[valya,blue,blue])),
+
+			not(in_list(Outfit,[natasha,green,green])),
+			not(in_list(Outfit,[natasha,white,white])),
+			not(in_list(Outfit,[natasha,blue,blue])),
+    
+			write(Outfit).
+
+
 
 
 
