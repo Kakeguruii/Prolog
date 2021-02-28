@@ -50,6 +50,18 @@ pr_ein1:- Houses=[_,_,_,_,_],
 		write(WHO1),nl,write(WHO2).
 
 
+pr_ein2:- Hair=[_,_,_],
+
+		in_list(Hair,[belokurov,brunet]),
+    
+		(in_list(Hair,[rizhov,blond]);
+		in_list(Hair,[rizhov,brunet])),
+
+		(in_list(Hair,[chernov,blond]);
+		in_list(Hair,[chernov,red])),
+
+		write(Hair).
+
 
 
 
