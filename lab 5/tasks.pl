@@ -116,6 +116,32 @@ pr_ein4:- Friends=[_,_,_],
     			
          write(Friends).
 
+pr_ein5:- Napitki = [_,_,_,_],
+
+				in_list(Napitki,[bottle,_]),
+				in_list(Napitki,[glass,_]),
+				in_list(Napitki,[jug,_]),
+				in_list(Napitki,[can,_]),
+
+				in_list(Napitki,[_,milk]),
+				in_list(Napitki,[_,lemonade]),
+				in_list(Napitki,[_,kvas]),
+				in_list(Napitki,[_,water]),
+
+				not(in_list(Napitki,[bottle,milk])),
+				not(in_list(Napitki,[bottle,water])),
+
+				not(in_list(Napitki,[jug,lemonade])),
+				not(in_list(Napitki,[jug,kvas])),
+
+				not(in_list(Napitki,[can,lemonade])),
+				not(in_list(Napitki,[can,water])),
+
+				not(in_list(Napitki,[glass,milk])),
+				not(in_list(Napitki,[can,milk])),
+
+				write(Napitki).
+
 
 
 
