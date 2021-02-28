@@ -58,5 +58,20 @@ min3(N,K,X):-D is N mod 10, D<3, !, K1 is K+1 ,E is N div 10, min3(E,K1,X).
 min3(N,K,X):-D is N div 10, min3(D,K,X).
 min3down(N,X):- min3(N,0,X).
 
+%12 номер НОД
+nod(A,A,A):-!.
+nod(0,B,B):-!.
+nod(A,0,A):-!.
+nod(A,B,X):-A>B, C is A mod B, nod(C,B,X).           
+nod(A,B,X):-A<B, C is B mod A, nod(A,C,X).
+
+%12 номер простота и колво делителей
+kol_del(1,_,1):-!.
+kol_del(I,N,Count):-I1 is I-1, kol_del(I1,N,C), (0 is N mod I -> Count is C+1;Count is C). 
+kol_del(N,Count):-kol_del(N,N,Count).                                                      
+simple(1).
+simple(X):- kol_del(X,C), C is 2.
+
+
 
 
