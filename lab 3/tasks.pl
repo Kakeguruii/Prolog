@@ -30,4 +30,9 @@ fibonachi(N,X):-fib(N,0,1,X).
 sum(0,0):-!.
 sum(N,X):- D is N div 10, M is N mod 10, sum(D,X1), X is M+X1. 
 
+%8 номер
+sum(0,Sum,Sum):-!.
+sum(N,Sum,X):- D is N div 10, M1 is N mod 10, Sum1 is Sum + M1,sum(D,Sum1,X).  
+sumnumbers(N,X):-sum(N,0,X).
+
 
