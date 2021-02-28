@@ -73,11 +73,15 @@ simple(1).
 simple(X):- kol_del(X,C), C is 2.
 
 
-%14 номер вниз
+%14 номер вверх
 sumnotsimpledel1(_, Del, 0) :- Del < 4, !.
 sumnotsimpledel1(N, Del, Sum) :- Del1 is Del - 1, sumnotsimpledel1(N, Del1, Sum1), M is N mod Del, ((M is 0, not(simple(Del))) -> Sum is Sum1 + Del; Sum is Sum1).
 sumnotsimpledel1(N, Sum) :- sumnotsimpledel1(N, N, Sum).
 
+%14 номер вниз
+sumnotsimpledel2(_, Del, CurSum, CurSum) :- Del < 4, !.
+sumnotsimpledel2(N, Del, CurSum, Sum) :- Del1 is Del - 1, M is N mod Del,((M is 0, not(simple(Del))) -> CurSum1 is CurSum + Del; CurSum1 is CurSum), sumnotsimpledel2(N, Del1, CurSum1, Sum).
+sumnotsimpledel2(N, Sum) :- sumnotsimpledel2(N, N, 0, Sum).
 
 
 
