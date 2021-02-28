@@ -40,4 +40,11 @@ min(N,N):-N<10.
 min(N,X):-N1 is N div 10, N2 is N mod 10, min(N1,X1), N2=<X1,!, X is N2.  
 min(N,X):- N1 is N div 10, N2 is N mod 10, min(N1,X1), N2>X1, X is X1.
 
+%10 номер
+min(0,N,N):-!.
+min(N,B,X):- D is N mod 10, D<B, !, E is N div 10, min(E,D,X).        
+min(N,B,X):- D is N div 10, min(D,B,X).
+minimal(N,X):-min(N,10,X).
+
+
 
