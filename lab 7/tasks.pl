@@ -58,3 +58,8 @@ build_all_perm_rep(File) :-
 task1(A,N,Flag):-Count is N*3, read_str(A,N,Flag), write(A), write(", "),
 write(A),write(", "),write(A),write(", "), write(Count).
 
+%2 номер
+counter([],CurCount,CurCount):-!.
+counter([H|T],CurCount,Count):- ((H is 32)-> CurCount1 is CurCount + 1;CurCount1 is CurCount), counter(T,CurCount1,Count).
+task2(A,N,Flag):- read_str(A,N,Flag),counter(A,1,Count),write(Count).
+
