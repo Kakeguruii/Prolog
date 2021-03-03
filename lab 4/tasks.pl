@@ -56,6 +56,12 @@ task8:-	write("enter the count of element: "), read(N),nl,
 member([X|_],X):-!.
 member([_|T],X):-member(T,X).
 
+%10 задание 
+reverse([],CurList,CurList):-!.
+reverse([H|T],CurList,NewList):-reverse(T,[H|CurList],NewList).
+reverse(L,NewList):-reverse(L,[],NewList).
+
+
 
 
 
