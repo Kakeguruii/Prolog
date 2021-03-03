@@ -19,3 +19,8 @@ sum_list_down([H|T], Sum):- sum_list_down([H|T], 0, Sum).
 sum_list_up([], 0) :- !.
 sum_list_up([H|T], Sum) :- sum_list_up(T, Sum1), Sum is Sum1 + H.
 
+%4 задание
+list_el_numb([H|_],H,CurN,CurN):-!.
+list_el_numb([_|T],Elem,CurN,N):-CurN1 is CurN+1,list_el_numb(T,Elem,CurN1,N).
+list_el_numb([H|T],Elem,N):-list_el_numb([H|T],Elem,1,N).
+
