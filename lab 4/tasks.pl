@@ -71,6 +71,11 @@ p(Sub_list,[_|List]):-p(Sub_list,List).
 delete(1,[_|T],T):- !.
 delete(X,[H|T1],[H|T2]) :- X1 is X-1,delete(X1,T1,T2).
 
+%13 задание 
+delete_equal([],_,[]):-!.
+delete_equal([H|T],H,T1):-delete_equal(T,H,T1).
+delete_equal([H|T],X,[H|T1]):-delete_equal(T,X,T1).
+
 
 
 
