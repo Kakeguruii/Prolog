@@ -10,3 +10,8 @@ read_list(N, CurN, CurL, L) :- CurN1 is CurN + 1, read(X), append_element(CurL, 
 write_list([]) :- !.
 write_list([H|T]) :- write(H), write(" "), write_list(T).
 
+%2 задание
+sum_list_down([],Sum,Sum):-!.
+sum_list_down([H|T],CurSum,Sum):- CurSum1 is CurSum + H, sum_list_down(T, CurSum1, Sum).
+sum_list_down([H|T], Sum):- sum_list_down([H|T], 0, Sum).
+
