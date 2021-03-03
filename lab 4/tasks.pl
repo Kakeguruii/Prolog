@@ -52,6 +52,10 @@ task8:-	write("enter the count of element: "), read(N),nl,
 		write("enter list"),nl, read_list(N,List), min_list_down(List,Min),
 		write("min element of list: "), write(Min),!; write("list is empty").
 
+%9 задание
+member([X|_],X):-!.
+member([_|T],X):-member(T,X).
+
 
 
 
