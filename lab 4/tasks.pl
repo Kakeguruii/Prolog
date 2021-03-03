@@ -31,3 +31,11 @@ task4_2:-	write("enter the count of element: "), read(N),nl,
 			list_el_numb(List,L,Num), write("element number: "), write(Num),!;
 			write("such element isn't found").
 
+%5 задание
+task5:- 	write("enter the count of element: "), read(N),nl,
+			write("enter list"), read_list(N,List),nl,
+			write("enter element's number: "), read(Numb),nl,
+		list_el_numb(List,L,Numb), write("element with that number: "), write(L),!;
+    		write("element  with that number isn't found ").
+
+
