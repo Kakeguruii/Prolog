@@ -47,4 +47,13 @@ min_list_down([],CurMin,CurMin):-!.
 min_list_down([H|T],CurMin,Min):-(H < CurMin -> CurMin1 is H; CurMin1 is CurMin),min_list_down(T,CurMin1,Min).
 min_list_down([H|T],Min):- min_list_down(T,H,Min).
 
+%8 задание
+task8:-	write("enter the count of element: "), read(N),nl,
+		write("enter list"),nl, read_list(N,List), min_list_down(List,Min),
+		write("min element of list: "), write(Min),!; write("list is empty").
+
+
+
+
+
 
