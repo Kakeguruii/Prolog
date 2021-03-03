@@ -24,3 +24,10 @@ list_el_numb([H|_],H,CurN,CurN):-!.
 list_el_numb([_|T],Elem,CurN,N):-CurN1 is CurN+1,list_el_numb(T,Elem,CurN1,N).
 list_el_numb([H|T],Elem,N):-list_el_numb([H|T],Elem,1,N).
 
+%4.2 задание
+task4_2:-	write("enter the count of element: "), read(N),nl,
+			write("enter list"), read_list(N,List),nl,
+			write("enter element: "), read(L),nl,
+			list_el_numb(List,L,Num), write("element number: "), write(Num),!;
+			write("such element isn't found").
+
