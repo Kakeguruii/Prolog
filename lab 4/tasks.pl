@@ -67,6 +67,10 @@ p(_,[]):-fail,!.
 p([H|Sub_list],[H|List]):-p(Sub_list,List),!.
 p(Sub_list,[_|List]):-p(Sub_list,List).
 
+%12 задание
+delete(1,[_|T],T):- !.
+delete(X,[H|T1],[H|T2]) :- X1 is X-1,delete(X1,T1,T2).
+
 
 
 
