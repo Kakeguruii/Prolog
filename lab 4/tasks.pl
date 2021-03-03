@@ -38,4 +38,8 @@ task5:- 	write("enter the count of element: "), read(N),nl,
 		list_el_numb(List,L,Numb), write("element with that number: "), write(L),!;
     		write("element  with that number isn't found ").
 
+%6 задание
+min_list_up([H],H):-!.
+min_list_up([H|T],Min):-min_list_up(T,Min1), (H < Min1 -> Min is H;Min is Min1).
+
 
