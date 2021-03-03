@@ -42,4 +42,9 @@ task5:- 	write("enter the count of element: "), read(N),nl,
 min_list_up([H],H):-!.
 min_list_up([H|T],Min):-min_list_up(T,Min1), (H < Min1 -> Min is H;Min is Min1).
 
+%7 задание
+min_list_down([],CurMin,CurMin):-!.
+min_list_down([H|T],CurMin,Min):-(H < CurMin -> CurMin1 is H; CurMin1 is CurMin),min_list_down(T,CurMin1,Min).
+min_list_down([H|T],Min):- min_list_down(T,H,Min).
+
 
