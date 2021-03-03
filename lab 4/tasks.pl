@@ -61,6 +61,12 @@ reverse([],CurList,CurList):-!.
 reverse([H|T],CurList,NewList):-reverse(T,[H|CurList],NewList).
 reverse(L,NewList):-reverse(L,[],NewList).
 
+%11 задание
+p([],_):-!.
+p(_,[]):-fail,!.
+p([H|Sub_list],[H|List]):-p(Sub_list,List),!.
+p(Sub_list,[_|List]):-p(Sub_list,List).
+
 
 
 
