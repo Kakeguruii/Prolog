@@ -15,3 +15,7 @@ sum_list_down([],Sum,Sum):-!.
 sum_list_down([H|T],CurSum,Sum):- CurSum1 is CurSum + H, sum_list_down(T, CurSum1, Sum).
 sum_list_down([H|T], Sum):- sum_list_down([H|T], 0, Sum).
 
+%3 задание
+sum_list_up([], 0) :- !.
+sum_list_up([H|T], Sum) :- sum_list_up(T, Sum1), Sum is Sum1 + H.
+
