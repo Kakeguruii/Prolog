@@ -76,6 +76,10 @@ delete_equal([],_,[]):-!.
 delete_equal([H|T],H,T1):-delete_equal(T,H,T1).
 delete_equal([H|T],X,[H|T1]):-delete_equal(T,X,T1).
 
+%14 Задание
+task14([]):- !.
+task14([H|T]):- not(member(T, H)), task14(T).
+
 
 
 
