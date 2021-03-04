@@ -90,7 +90,9 @@ kolEl([],_,N,N):-!.
 kolEl([H|T],X,N,Count):- (H is X -> N1 is (N + 1), kolEl(T,X,N1,Count);N1 is N, kolEl(T,X,N1,Count)).
 kolEl([H|T],X,Count):-kolEl([H|T],X,0,Count).
 
-
+%17 задание
+lenght_list([],0).
+lenght_list([_|T],X):-lenght_list(T,X1), X is (X1 + 1).
 
 
 
