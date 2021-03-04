@@ -104,6 +104,9 @@ sdvig([],L,L):-!.
 sdvig([H|T],L,[H|L1]):- sdvig(T,L, L1).
 sdvig([H|T],L):-sdvig(T,[H],L).
 
+%1.5 задание
+task1_5(List,N):- min_list_up(List,Min), list_el_numb(List, Min, Numb), Numb is N,!.
+
 
 
 
