@@ -94,6 +94,20 @@ kolEl([H|T],X,Count):-kolEl([H|T],X,0,Count).
 lenght_list([],0).
 lenght_list([_|T],X):-lenght_list(T,X1), X is (X1 + 1).
 
+%1.6 задание
+%ОСНОВНАЯ ПРОГА
+task1_6(List,0,List):-!.
+task1_6(List,Count,X):-Count1 is Count-1, task1_6(List,Count1,L1), sdvig(L1,X).
+task1_6(List,X):-task1_6(List,3,X).
+
+sdvig([],L,L):-!.
+sdvig([H|T],L,[H|L1]):- sdvig(T,L, L1).
+sdvig([H|T],L):-sdvig(T,[H],L).
+
+
+
+
+
 
 
 
