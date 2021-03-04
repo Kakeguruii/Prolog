@@ -85,6 +85,11 @@ task15([],[]):-!.
 task15([H|T],T1):-member(T,H),task15(T,T1),!.
 task15([H|T],[H|T1]):-not(member(T,H)),task15(T,T1),!.
 
+%16 задание
+kolEl([],_,N,N):-!.
+kolEl([H|T],X,N,Count):- (H is X -> N1 is (N + 1), kolEl(T,X,N1,Count);N1 is N, kolEl(T,X,N1,Count)).
+kolEl([H|T],X,Count):-kolEl([H|T],X,0,Count).
+
 
 
 
