@@ -136,6 +136,17 @@ task_1_27_program:-	write("enter the count of element: "), read(N),nl,
 					write("enter list"), read_list(N,List),nl,
 					task1_27(List,X), write("New list: "), write(X).
 
+%1.42 задание
+%предикаты
+sredarifm(List,X):-sum_list_up(List, Sum), lenght_list(List, Count), X is Sum/Count.
+task1_42([], _, List, List) :- !.
+task1_42([H|T], Sred, CurList, NewList) :-(H < Sred ->append_element(CurList, [H], CurList1),task1_42(T, Sred, CurList1, NewList);task1_42(T, Sred, CurList, NewList)).
+task1_42(List, NewList) :-sredarifm(List, Sred), task1_42(List, Sred, [], NewList). 
+%программа
+task_1_42_program:-	write("enter the count of element: "), read(N),nl,
+					write("enter list"), read_list(N,List),nl,
+					task1_42(List,X), write("This elements: "), write(X).
+
 
 
 
