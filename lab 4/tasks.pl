@@ -108,7 +108,13 @@ task_1_6_program:-	write("enter the count of element: "), read(N),nl,
 			task1_6(List,X), write("New list: "), write(X).
 
 %1.5 задание
+%предикаты
 task1_5(List,N):- min_list_up(List,Min), list_el_numb(List, Min, Numb), Numb is N,!.
+%программа
+task_1_5_program:-	write("enter the count of element: "), read(N),nl,
+			write("enter number: "), read(X), nl,
+    			write("enter list"), read_list(N,List),nl,
+			task1_5(List,X), write("It's true "); write("It's false"),!.
 
 
 
