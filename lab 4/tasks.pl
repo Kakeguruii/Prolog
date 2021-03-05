@@ -114,7 +114,19 @@ task1_5(List,N):- min_list_up(List,Min), list_el_numb(List, Min, Numb), Numb is 
 task_1_5_program:-	write("enter the count of element: "), read(N),nl,
 			write("enter number: "), read(X), nl,
     			write("enter list"), read_list(N,List),nl,
-			task1_5(List,X), write("It's true "); write("It's false"),!.
+			task1_5(List,X), write("It's true "); write("It's false").
+
+%1.18 задание
+%предикаты
+task1_18(List,X):-task1_18(List,[],X).
+task1_18([H|T],NewList,NewList):- min_list_up([H|T],Min), H is Min,!.
+task1_18([H|T],NewList,X):- append_element(NewList,[H],NewList1), task1_18(T,NewList1,X).
+%программа
+task_1_18_program:-	write("enter the count of element: "), read(N),nl,
+    				write("enter list"), read_list(N,List),nl,
+					task1_18(List,X), write("New list: "), write(X).
+
+
 
 
 
