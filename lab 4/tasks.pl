@@ -95,14 +95,17 @@ lenght_list([],0).
 lenght_list([_|T],X):-lenght_list(T,X1), X is (X1 + 1).
 
 %1.6 задание
-%ОСНОВНАЯ ПРОГА
+%предикаты
 task1_6(List,0,List):-!.
 task1_6(List,Count,X):-Count1 is Count-1, task1_6(List,Count1,L1), sdvig(L1,X).
 task1_6(List,X):-task1_6(List,3,X).
-
 sdvig([],L,L):-!.
 sdvig([H|T],L,[H|L1]):- sdvig(T,L, L1).
 sdvig([H|T],L):-sdvig(T,[H],L).
+%программа
+task_1_6_program:-	write("enter the count of element: "), read(N),nl,
+			write("enter list"), read_list(N,List),nl,
+			task1_6(List,X), write("New list: "), write(X).
 
 %1.5 задание
 task1_5(List,N):- min_list_up(List,Min), list_el_numb(List, Min, Numb), Numb is N,!.
