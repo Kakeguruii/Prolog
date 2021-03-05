@@ -126,6 +126,16 @@ task_1_18_program:-	write("enter the count of element: "), read(N),nl,
     				write("enter list"), read_list(N,List),nl,
 					task1_18(List,X), write("New list: "), write(X).
 
+%1.27 задание
+%предикаты
+task1_27(List,0,List):-!.
+task1_27(List,Count,X):-Count1 is Count-1, task1_27(List,Count1,L1), sdvig(L1,X).
+task1_27(List,X):-task1_6(List,1,X).
+%программа
+task_1_27_program:-	write("enter the count of element: "), read(N),nl,
+					write("enter list"), read_list(N,List),nl,
+					task1_27(List,X), write("New list: "), write(X).
+
 
 
 
