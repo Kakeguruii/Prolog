@@ -59,13 +59,12 @@ max_word([H|T],ListWord,CurCount,CurWord,Word):- kolEl(ListWord,H,CountH),(Count
 	max_word(T,ListWord,CurCount1,CurWord1,Word).
 max_word(UniListWord,ListWord,Word):-max_word(UniListWord,ListWord,0,[],Word).
 
-
 task3:- write("Write str: "),read_str(List),
 	count_words(List,CountW),
 	get_words(List,ListWord,CountW),
-	write("List words: "),write(ListWord),nl,
+	write("List words: "),write_list_str(ListWord),nl,
 	unique_list(ListWord,UniListWord),
-	write("Unique list words: "),write(UniListWord),nl,
+	write("Unique list words: "),write_list_str(UniListWord),nl,
 	write("Max count word: "),
 	max_word(UniListWord,ListWord,Word),
 	write_str(Word).
