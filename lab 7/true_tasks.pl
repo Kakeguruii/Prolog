@@ -123,6 +123,16 @@ task5:-write("Write str: "),read_str(List),
        write("Numbers: "), write_numbers(List,Elem).
 
 
+%task 6
+del3([],_):-!.
+del3([H|T],CurNum):-((0 is CurNum mod 3)->append_element([],[H],ListLetter),write_str(ListLetter),write(" "),CurNum1 is CurNum+1;
+CurNum1 is CurNum+1), del3(T,CurNum1).
+del3([H|T]):-del3([H|T],1).
+
+task6:-write("Write str: "),read_str(List),nl,
+	write("Answer: "),del3(List).
+
+
 
 
 
